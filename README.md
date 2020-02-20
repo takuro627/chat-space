@@ -28,23 +28,24 @@ Things you may want to cover:
 # users テーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false|
+|name|string|null: false|
 |mail_address|string|null: false|
 |pass_word|string|null: false|
 
 ## Association
-- has_many :user_ids, through: :groups_users
-- has_many :groups
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 - has_many :messages
 
 # groups テーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ## Association
-- has_many :group_ids
+- has_many :groups_users
 - has_many :users, through: :groups_users
+- has_meny :messages
 
 # groups_users テーブル
 |Column|Type|Options|
