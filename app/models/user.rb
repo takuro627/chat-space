@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  validates :name, presence: true
+  # validates :name, presence: true
+  # # アソシエーション付与時にコメントアウト
+  has_many :group_users
+  has_many :groups, through: :group_users
 end
