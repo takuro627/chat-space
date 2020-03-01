@@ -13,27 +13,15 @@
 
   .main-chat__list    
     = render @messages
-  -# .main-chat__list
-    
-  -#   .main-chat__list__message
-  -#     .main-chat__list__message__message-info
-  -#       .main-chat__list__message__message-info__user-name
-  -#         テスト・テスト
-  -#       .main-chat__list__message__message-info__date
-  -#         2020/04/01
-  -#     .main-chat__list__message__content
-  -#       Good morning
-
 
   .main-chat__message-form
-    
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-      .form__mask
+      .input-box
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
-          = icon('fas', 'image', class: 'icon')
+          = icon('fa', 'image', class: 'icon')
           = f.file_field :image, class: 'input-box__image__file'
-          = f.submit 'Send', class: 'submit-btn'
+      = f.submit 'Send', class: 'submit-btn'
 
     -# %form.main-chat__message-form__new-message
     -#   .input-box
