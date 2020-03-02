@@ -6,7 +6,6 @@
       .main-chat__group-info__current-group__name
         = @group.name
       .main-chat__group-info__current-group__member
-        -# Menmber:
         - @group.group_users.each do |group_user|
           = group_user.user.name
     =link_to "Edit", edit_group_path(@group), class:'btn'
@@ -17,17 +16,9 @@
   .main-chat__message-form
     = form_for [@group, @message] do |f|
       .input-box
-        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message', action: group_messages_path
         = f.label :image, class: 'input-box__image' do
           = icon('fa', 'image', class: 'icon')
           = f.file_field :image, class: 'input-box__image__file'
-      = f.submit 'Send', class: 'submit-btn'
-
-    -# %form.main-chat__message-form__new-message
-    -#   .input-box
-    -#     %input{type:"text", class:"input-box__text", placeholder:"type a message"}
-    -#     %label{class: "input-box__image"}
-    -#       = icon('fas', 'image')
-    -#       %input{type: "file", class: "input-box__image__file"}
-      -# %input{type:"submit", class:"submit-btn"}
+      = f.submit 'Send', class: 'submit-btn', id: 'new_message'
 
