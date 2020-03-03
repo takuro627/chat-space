@@ -36,8 +36,6 @@
       &__icons {
         width: 60px;
         height: 100%;
-        // display: flex;
-        // display: block;
         text-align: right;
         
     
@@ -122,7 +120,8 @@
     height: calc(100% - 190px);
     width: 100%;
     padding-left: 40px;
-  
+    overflow: scroll;
+
     &__message {
       padding: 35px 0 46px 0;
 
@@ -176,7 +175,6 @@
           }
 
           &__image {
-            // width: auto;
             top: 10px;
             right: 10px;
             position: absolute;
@@ -192,7 +190,6 @@
           width: 100px;
           height: 50px;
           padding: 0 30px;
-          // margin-top: 10px;
           margin-left: 15px;
           cursor: pointer;
         }
