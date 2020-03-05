@@ -17,3 +17,5 @@
 .byebug_history
 # 投稿された画像自体はソースコードには関係のないので、下記を記述し画像がGithubにコミットされないようにした
 public/uploads/*
+
+config/secrets.yml
