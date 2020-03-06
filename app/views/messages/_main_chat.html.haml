@@ -6,6 +6,7 @@
       .main-chat__group-info__current-group__name
         = @group.name
       .main-chat__group-info__current-group__member
+        Member:
         - @group.group_users.each do |group_user|
           = group_user.user.name
     =link_to "Edit", edit_group_path(@group), class:'btn'
